@@ -72,12 +72,14 @@ function initialCheck() {
 }
 
 function installQuestions() {
-	echo "Welcome to the WireGuard installer!"
-	echo "The git repository is available at: https://github.com/angristan/wireguard-install"
-	echo ""
-	echo "I need to ask you a few questions before starting the setup."
-	echo "You can leave the default options and just press enter if you are ok with them."
-	echo ""
+        echo -e "${barra}"
+	echo -e "Welcome to the WireGuard installer!"
+	echo -e "The git repository is available at: https://github.com/ThonyDroidYT/wireguard-install"
+	echo -e ""
+	echo -e "I need to ask you a few questions before starting the setup."
+	echo -e "You can leave the default options and just press enter if you are ok with them."
+	echo -e ""
+        echo -e "${barra}"
 
 	# Detect public IPv4 or IPv6 address and pre-fill for the user
 	SERVER_PUB_IP=$(ip -4 addr | sed -ne 's|^.* inet \([^/]*\)/.* scope global.*$|\1|p' | head -1)
@@ -220,12 +222,12 @@ net.ipv6.conf.all.forwarding = 1" >/etc/sysctl.d/wg.conf
 	# WireGuard might not work if we updated the kernel. Tell the user to reboot
 	if [[ ${WG_RUNNING} -ne 0 ]]; then
 		echo -e "\nWARNING: WireGuard does not seem to be running."
-		echo "You can check if WireGuard is running with: systemctl status wg-quick@${SERVER_WG_NIC}"
-		echo "If you get something like \"Cannot find device ${SERVER_WG_NIC}\", please reboot!"
+		echo -e "You can check if WireGuard is running with: systemctl status wg-quick@${SERVER_WG_NIC}"
+		echo -e "If you get something like \"Cannot find device ${SERVER_WG_NIC}\", please reboot!"
 	fi
 
 	newClient
-	echo "If you want to add more clients, you simply need to run this script another time!"
+	echo -e "${yellow}If you want to add more clients, you simply need to run this script another time!${plain}"
 }
 
 function newClient() {
