@@ -358,7 +358,7 @@ function revokeClient() {
 }
 
 function uninstallWg() {
-	echo ""
+	echo -e "${red}"
 	read -rp "Do you really want to remove WireGuard? [y/n]: " -e -i n REMOVE
 	if [[ $REMOVE == 'y' ]]; then
 		checkOS
@@ -395,15 +395,15 @@ function uninstallWg() {
 		WG_RUNNING=$?
 
 		if [[ ${WG_RUNNING} -eq 0 ]]; then
-			echo "WireGuard failed to uninstall properly."
+			echo -e "${green}WireGuard failed to uninstall properly.${plain}"
 			exit 1
 		else
-			echo "WireGuard uninstalled successfully."
+			echo -e "${green}WireGuard uninstalled successfully.${plain}"
 			exit 0
 		fi
 	else
 		echo -e ""
-		echo -e "Removal aborted!"
+		echo -e "${red}Removal aborted!${plain}"
 	fi
 }
 
