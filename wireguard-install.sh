@@ -12,7 +12,7 @@ cyan='\033[1;36m'
 white='\033[1;37m'
 pink='\e[38;5;198m'
 #Barra
-barra="\e[1;34m=========================================================\e[0m'
+barra="\e[1;34m=========================================================\e[0m"
 
 # Secure WireGuard server installer for Debian, Ubuntu, CentOS, Fedora and Arch Linux
 # https://github.com/angristan/wireguard-install
