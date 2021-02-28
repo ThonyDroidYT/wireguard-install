@@ -1,4 +1,18 @@
 #!/bin/bash
+#27/02/2021
+#BY THONY.DROID
+#COLORS
+plain='\033[0m'
+red='\033[1;31m'
+green='\033[1;32m'
+yellow='\033[1;33m'
+blue='\033[1;34m'
+purple='\033[1;35m
+cyan='\033[1;36m'
+white='\033[1;37m'
+pink='\e[38;5;198m'
+#Barra
+barra='========================================================='
 
 # Secure WireGuard server installer for Debian, Ubuntu, CentOS, Fedora and Arch Linux
 # https://github.com/angristan/wireguard-install
@@ -388,22 +402,22 @@ function uninstallWg() {
 			exit 0
 		fi
 	else
-		echo ""
-		echo "Removal aborted!"
+		echo -e ""
+		echo -e "Removal aborted!"
 	fi
 }
 
 function manageMenu() {
-	echo "Welcome to WireGuard-install!"
-	echo "The git repository is available at: https://github.com/angristan/wireguard-install"
-	echo ""
-	echo "It looks like WireGuard is already installed."
-	echo ""
-	echo "What do you want to do?"
-	echo "   1) Add a new user"
-	echo "   2) Revoke existing user"
-	echo "   3) Uninstall WireGuard"
-	echo "   4) Exit"
+	echo -e "Welcome to WireGuard-install!"
+	echo -e "The git repository is available at: https://github.com/angristan/wireguard-install"
+	echo -e ""
+	echo -e "It looks like WireGuard is already installed."
+	echo -e ""
+	echo -e "What do you want to do?"
+	echo -e "   [1] > Add a new user"
+	echo -e "   [2] > Revoke existing user"
+	echo -e "   [3] > Uninstall WireGuard"
+	echo -e "   [4] > Exit"
 	until [[ ${MENU_OPTION} =~ ^[1-4]$ ]]; do
 		read -rp "Select an option [1-4]: " MENU_OPTION
 	done
