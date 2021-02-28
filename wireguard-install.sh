@@ -408,15 +408,17 @@ function uninstallWg() {
 }
 
 function manageMenu() {
+        echo -e "${barra}"
 	echo -e "${green}Welcome to WireGuard-install!${plain}"
-	echo -e "The git repository is available at: https://github.com/angristan/wireguard-install"
-	echo -e ""
-	echo -e "It looks like WireGuard is already installed."
+	echo -e "${yellow}The git repository is available at: https://github.com/ThonyDroidYT/wireguard-install${plain}"
+	echo -e "${barra}"
+        echo -e ""
+	echo -e "${cyan}It looks like WireGuard is already installed.${cyan}"
 	echo -e ""
 	echo -e "${yellow}What do you want to do?${plain}"
-	echo -e "${green}   [1] ${red}> Add a new user${plain}"
-	echo -e "${green}   [2] ${red}> Revoke existing user${plain}"
-	echo -e "${green}   [3] ${red}> Uninstall WireGuard${plain}"
+	echo -e "${green}   [1] ${red}> ${cyan}Add a new user${plain}"
+	echo -e "${green}   [2] ${red}> ${cyan}Revoke existing user${plain}"
+	echo -e "${green}   [3] ${red}> ${cyan}Uninstall WireGuard${plain}"
 	echo -e "${green}   [4] ${red}> Exit${plain}"
 	until [[ ${MENU_OPTION} =~ ^[1-4]$ ]]; do
 		read -rp "Select an option [1-4]: " MENU_OPTION
